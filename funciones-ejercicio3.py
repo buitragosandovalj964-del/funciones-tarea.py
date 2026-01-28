@@ -105,7 +105,3 @@ def calcular_comision():
 
 
 calcular_comision()
-
-
-
-calcular_comision()
