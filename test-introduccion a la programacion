@@ -1,0 +1,42 @@
+def cajero():
+    saldo = 10000  # saldo inicial
+
+    while True:
+        print("""
+--- Sistema de Cajero Automático ---
+1. Consultar saldo
+2. Depositar dinero
+3. Retirar dinero
+4. Salir
+""")
+
+        opcion = int(input("Seleccione una opción: "))
+
+        if opcion == 1:
+            print(f"Su saldo actual es: {saldo}")
+
+        elif opcion == 2:
+            deposito = int(input("Ingrese el valor a depositar: "))
+            if deposito > 0:
+                saldo += deposito
+                print(f"Depósito exitoso. Nuevo saldo: {saldo}")
+            else:
+                print("El depósito debe ser mayor que cero")
+
+        elif opcion == 3:
+            retiro = int(input("Ingrese el valor a retirar: "))
+            if retiro <= saldo:
+                saldo -= retiro
+                print(f"Retiro exitoso. Nuevo saldo: {saldo}")
+            else:
+                print("Saldo insuficiente")
+
+        elif opcion == 4:
+            print("Gracias por usar el cajero automático")
+            break
+
+        else:
+            print("Opción no válida")
+
+
+cajero()
