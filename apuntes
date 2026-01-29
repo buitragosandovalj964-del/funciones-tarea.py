@@ -1,0 +1,60 @@
+def liquidar():
+    total_pagar = 0
+    cont_expertos = 0
+    cont_novatos = 0
+
+    while True:
+        print("""
+BIENVENIDO A LA EMPRESA TRASRAPIDO
+1. Liquidar conductor
+2. Salir
+""")
+
+        opcion = int(input("Elija una opción: "))
+
+        if opcion == 1:
+            cedula = input("Ingrese cédula: ")
+            nombre = input("Ingrese nombre: ")
+            clase = int(input("Clase (1: Experto, 2: Novato): "))
+            pasajes = float(input("Valor total de pasajes del mes: "))
+            encomiendas = float(input("Valor total de encomiendas del mes: "))
+
+            if clase == 1:
+                com_pasajes = pasajes * 0.20
+                com_encomiendas = encomiendas * 0.10
+                cont_expertos += 1
+            elif clase == 2:
+                com_pasajes = pasajes * 0.15
+                com_encomiendas = encomiendas * 0.05
+                cont_novatos += 1
+            else:
+                print("Clase inválida")
+                continue
+
+            pago_total = com_pasajes + com_encomiendas
+            total_pagar += pago_total
+
+            print("Conductor:", nombre)
+            print("Comisión por pasajes:", com_pasajes)
+            print("Comisión por encomiendas:", com_encomiendas)
+            print("Pago total:", pago_total)
+
+        elif opcion == 2:
+            print("TOTAL A PAGAR A TODOS LOS CONDUCTORES:", total_pagar)
+            print("Cantidad de conductores expertos:", cont_expertos)
+            print("Cantidad de conductores novatos:", cont_novatos)
+            print("Gracias por usar el sistema TRASRAPIDO")
+            return
+
+        else:
+            print("Opción inválida")
+
+liquidar()
+
+
+
+
+
+
+
+
