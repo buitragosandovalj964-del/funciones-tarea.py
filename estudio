@@ -1,0 +1,81 @@
+campers = ["andres" , "julian",  "alberth"]
+
+print(campers)
+
+# len() devuelve la longitud de la lista
+print(len(campers))
+# append() agrega un elemento al final de la lista
+campers.append("nicolle")
+print(campers, len(campers))
+# pop(indice): elimina el elemento en la posicion indice
+elEm = campers.pop()
+print(elEm, campers, len(campers))
+# extend(): agrega los elementos de una lista a otra
+grupo = ["sebastian", "samuel", "jaime"]
+#campers.append(grupo)
+campers.extend(grupo)
+print(campers, len(campers))
+
+# index(): devuelve el indice del primer elemento que coincide con el valor buscado
+try:
+    pos = campers.index("sebastian")
+    print("posicion de sebastian:", pos)
+    pos = campers.index("luz")
+except ValueError:
+    print("luz no esta en la lista")
+
+# in / not in: verifica si un elemento esta en la lista
+print("sebastian" in campers)
+print("luz" not in campers)
+
+# remove(valor): elimina la primera ocurrencia del valor buscado
+campers.append("luz")
+campers.append("daniel")
+try:
+    campers.remove("luz")
+    print("luz eliminado")
+except ValueError:
+    print("luz no esta en la lista")
+
+# sort(): ordena la lista
+campers.sort()
+print(campers)
+campers.sort(reverse=True)
+print(campers)
+# SLICEING
+print(campers[1:2]) # desde el indice 0 hasta el 2
+
+#reverse(): invierte el orden de los elementos en la lista
+print(campers.reverse) 
+print(campers) 
+
+# insert(indice, valor): inserta un valor en la posicion indice
+campers.insert (0, "Junior")
+print(campers)
+# count(valor): cuenta las ocurrencias del valor en la lista
+print(campers.count("junior"))
+
+# clear(): elimina todos los elementos de la lista
+#campers.clear()
+# sorted(): devuelve una copia ordenada de la lista sin modificar la original
+campers_ord= sorted[campers]
+print(campers)
+print(campers_ord)
+# min() / max(): devuelve el valor minimo / maximo de la lista
+menor=(min(campers))
+print(menor)
+# max 
+mayor=(max(campers))
+print(mayor)
+
+# sum(): devuelve la suma de los elementos de la lista
+print([19, 28, 20, 22] +[17, 18, 20]+[16, 17, 19])
+
+# recorriendo una lista con un bucle for
+#1 . por indice
+for pos in range(len(campers)):
+    print(campers[campers], end= ", ")
+
+#2. por contenido:
+for c in campers:
+    print(c, end=", ")
