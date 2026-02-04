@@ -1,0 +1,24 @@
+ventas_sem = [[100, 88, 92, 94, 85, 110, ],
+              [30, 42, 31, 32, 38, 40, 37],
+              [23, 35, 39, 45, 55, 60, 61],
+              [45, 50, 56, 65, 47, 57, 68],
+              [18, 25, 33, 21, 22, 28, 32]]
+
+precio = (1500, 5000, 6500, 2500, 22500)
+
+# PREGUNTA 1
+# PRODUCTO QUE GENERE MAS INGRESOS EN LA SEMANA
+
+total_ing_semana= [0]*5
+
+for fil in range(len(ventas_sem)):
+    suma = 0
+    for col in range(len(ventas[fil])):
+        suma += ventas_sem[fil][col]
+    total_ing_sem[fil] = suma * precio[fil]
+
+ingreso_mayor = max(total_ing_sem)
+prod_may_ing = total_ing_sem.index(ing_mayor)
+print(f"El producto con mas ingreso a la semana es{produc_may_ing}con $
+{ing_mayor:,}")
+print(total_ing_sem)
